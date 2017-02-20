@@ -11,4 +11,4 @@ This is a chat application with asynchronous server and asynchronous client.
 * Entering In,receiving a welcome message from server,the first digit represent the length of this message
 ![Alt text](Results/Screenshot from 2017-02-20 20:08:57.png)
 * Communication,when client send message out,always received the same message back from server,and server is also free to send message to client,messages from server always preceded with a digit suggesting the length of corresponding message.
-![Alt_text](Screenshot from 2017-02-20 20:12:38.png)
+![Alt text](Results/Screenshot from 2017-02-20 20:12:38.png)
