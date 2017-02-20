@@ -6,8 +6,7 @@ This is a chat application with **asynchronous server** and **asynchronous clien
 - QT Client 
 
 #**Brief Introduction**
-##**Remarks**##
-** Message from Server always preceded with a number suggesting the message's length **
+##**Remarks:Message from Server always preceded with a number suggesting the message's length**##
 * Log In Page                                                           
 ![Alt text](Results/Screenshot from 2017-02-19 23:41:40.png)
 * Entering In,receiving a welcome message from server
