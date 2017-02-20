@@ -6,6 +6,7 @@
 #include <boost/asio.hpp>
 #include <string>
 
+
 namespace Ui {
 class MainWindow;
 }
@@ -28,6 +29,8 @@ private:
     Ui::MainWindow *ui;
     boost::asio::io_service io_service;
     std::shared_ptr< chat_client> m_ptrClient;
+    std::string m_strUserName;
+    bool m_bUserSaid;
 };
 
 #endif // MAINWINDOW_H

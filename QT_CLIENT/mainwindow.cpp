@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QPixmap pix(":/new/prefix1/download.jpg");
    // ui->label->setStyelSheet("border-image:url(:/2.png);");
     ui->label_3->setPixmap(pix);
+    m_bUserSaid=false;
 }
 
 MainWindow::~MainWindow()
@@ -31,6 +32,7 @@ void MainWindow::on_pushButton_2_clicked()
     const char *c_strIp = ba.data();
     QByteArray baUser = strUser.toLatin1();
     const char *c_strUser = baUser.data();
+    m_strUserName.assign(c_strUser,std::find(c_strUser,c_strUser+strlen(c_strUser),'\0'));
     auto endpoint_iterator = resolver.resolve({c_strIp,"1234"});//({ argv[1], argv[2] });
     m_ptrClient=std::make_shared<chat_client> (io_service, endpoint_iterator);
     if(m_ptrClient->bConnected==false&&m_ptrClient->bConnectionTransversed==true)
@@ -75,7 +77,12 @@ void MainWindow::on_pushButton_clicked()
 {
     QString strLineInput=ui->lineEdit->text();
     QString strAppend;
-    strAppend="Me:";
+    if(m_bUserSaid==false)
+    {
+        m_strUserName.append(":");
+        m_bUserSaid=true;
+    }
+    strAppend=QString::fromStdString(m_strUserName);//"Me:";
     strAppend+=strLineInput;
     ui->textEdit_3->append(strAppend);
      QByteArray ba = strLineInput.toLatin1();
