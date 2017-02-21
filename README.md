@@ -1,4 +1,4 @@
-#**BoostAsioChat TCP/IP Chat Application**
+#**TCP/IP Chat Application**
 This is a chat application with **asynchronous server** and **asynchronous client**.
 #**Techniques involved**
 - Boost Asio network library
